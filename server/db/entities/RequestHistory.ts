@@ -23,6 +23,6 @@ export class RequestHistory {
   @Property()
   clientId!: string;
 
-  @Property()
-  createdAt: Date = new Date();
+  @Property({ onCreate: () => new Date() })
+  createdAt?: Date;
 }

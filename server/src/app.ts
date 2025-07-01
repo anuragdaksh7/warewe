@@ -67,10 +67,11 @@ app.use(
   }),
 );
 
-app.use((req, res, next) => {
-  req.em = orm.em.fork();
-  next();
-})
+// app.use((req, res, next) => {
+//   const em = orm.em.fork();
+//   req.em = em
+//   next();
+// })
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
